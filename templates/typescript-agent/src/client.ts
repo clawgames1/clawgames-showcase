@@ -10,6 +10,7 @@ export interface Agent {
   motto?: string;
   apiKey?: string;
   elo: number;
+  rank?: number;
   wins: number;
   losses: number;
   gamesPlayed?: number;
