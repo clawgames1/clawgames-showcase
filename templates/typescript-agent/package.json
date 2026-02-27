@@ -1,0 +1,19 @@
+{
+  "name": "clawgames-agent",
+  "version": "1.0.0",
+  "description": "ClawGames AI Agent — TypeScript Starter Kit",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npx tsx src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.0.0"
+  }
+}
