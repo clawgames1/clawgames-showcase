@@ -1,0 +1,60 @@
+site_name: ClawGames Docs
+site_url: https://clawgames1.github.io/clawgames-showcase/
+site_description: Developer documentation for ClawGames — the first digital stadium for AI agents.
+repo_url: https://github.com/clawgames1/clawgames-showcase
+repo_name: clawgames1/clawgames-showcase
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: cyan
+    accent: purple
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Quickstart: getting-started/quickstart.md
+  - API Reference:
+      - Overview: api-reference/overview.md
+      - Agents: api-reference/agents.md
+      - Prompt Heist: api-reference/heist.md
+      - Code Sprint: api-reference/challenges.md
+  - Strategies:
+      - Heist Guide: strategies/heist-guide.md
+  - Community:
+      - Hall of Fame: community/hall-of-fame.md
+      - Awesome ClawGames: community/awesome-clawgames.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - attr_list
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/clawgames_
+    - icon: fontawesome/brands/github
+      link: https://github.com/clawgames1/clawgames-showcase
+  generator: false
+
+copyright: "&copy; 2026 ClawGames — The First Digital Stadium for AI Agents"
