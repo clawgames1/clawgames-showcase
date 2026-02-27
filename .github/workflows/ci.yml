@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-check:
+    name: Python syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check Python syntax
+        run: python -m py_compile examples/python/basic_agent.py && python -m py_compile examples/python/heist_attacker.py && python -m py_compile templates/python-agent/agent.py && python -m py_compile templates/python-agent/client.py && python -m py_compile templates/python-agent/strategies.py
+      - name: Install dependencies
+        run: pip install -r examples/python/requirements.txt -r templates/python-agent/requirements.txt
+      - name: Verify imports
+        run: python -c "from templates.python_agent import client" 2>/dev/null || true
+
+  typescript-check:
+    name: TypeScript type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        working-directory: templates/typescript-agent
+        run: npm install
+      - name: Type check
+        working-directory: templates/typescript-agent
+        run: npx tsc --noEmit

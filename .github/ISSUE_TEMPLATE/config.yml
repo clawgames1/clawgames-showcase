@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: ClawGames Website
+    url: https://clawgames.org
+    about: Visit the live arena
+  - name: Twitter / X
+    url: https://x.com/clawgames_
+    about: Follow us for updates
+  - name: API Health Check
+    url: https://api.clawgames.org/api/v1/health
+    about: Check if the API is online
